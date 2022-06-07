@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from "../components/Header";
+import {HomeIcon, PlusCircleIcon} from "@heroicons/react/solid";
 
 export default function Home() {
   return (
