@@ -1,5 +1,6 @@
 import React from 'react';
 import {DotsHorizontalIcon} from "@heroicons/react/solid";
+import {HeartIcon, ChatIcon, BookmarkIcon} from "@heroicons/react/outline";
 
 function Post( { img, userImg, username, id } ) {
     return (
@@ -12,8 +13,16 @@ function Post( { img, userImg, username, id } ) {
             </div>
 
             {/*Posts Image*/}
-
             <img className={"object-cover w-full"} src={img} alt={""}/>
+
+            {/*Post Buttons*/}
+            <div className="flex justify-between px-4 pt-4">
+                <div className="flex space-x-4">
+                    <HeartIcon className="btn"/>
+                    <ChatIcon className="btn"/>
+                </div>
+                <BookmarkIcon className="btn"/>
+            </div>
         </div>
     );
 }
