@@ -5,7 +5,7 @@ import {HomeIcon, PlusCircleIcon} from "@heroicons/react/solid";
 
 function Header(props) {
     return (
-        <div className={"shadow-sm border-b  top-0 sticky bg-white z-30"}>
+        <div className={"shadow-sm border-b  top-0 sticky bg-white z-30 p-5"}>
             <div className={"flex items-center justify-between max-w-6xl xl:mx-auto"}>
                 {/*Left*/}
                 <div className={"cursor-pointer h-24 w-24 relative hidden lg:inline-grid"}>
