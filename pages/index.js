@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from "../components/Header";
 import {HomeIcon, PlusCircleIcon} from "@heroicons/react/solid";
 import Feed from "../components/Feed";
+import UploadModal from "../components/UploadModal";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Feed/>
 
       {/*Modal*/}
+        <UploadModal/>
 
     </div>
 

@@ -3,10 +3,13 @@ import Image from "next/image";
 import {SearchIcon} from "@heroicons/react/outline";
 import {HomeIcon, PlusCircleIcon} from "@heroicons/react/solid";
 import {useSession, signIn, signOut} from "next-auth/react";
+import {useRecoilState} from "recoil";
+import {modalState} from "../atom/moduleAtom";
 
 function Header(props) {
 
     const {data : session} = useSession();
+    const [open, setOpen] = useRecoilState(modalState);
 
     console.log(session);
 
@@ -41,12 +44,13 @@ function Header(props) {
                     </div>
                     <input type={"text"} placeholder={"Search"} className={"bg-gray-50 pl-10 border-gray-500 text-sm focus:ring-black focus:border-black rounded-md"}/>
                 </div>
+
                 {/*Right*/}
                 <div className={"flex items-center space-x-4"}>
                     <HomeIcon className={"hidden md:inline-flex h-6 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out"}/>
                     {session ? (
                         <>
-                            <PlusCircleIcon className={"h-6 cursor-pointer hover:scale-125 transition-transform ease-out"}/>
+                            <PlusCircleIcon onClick={()=>setOpen(true)} className={"h-6 cursor-pointer hover:scale-125 transition-transform ease-out"}/>
                             <img onClick={signOut}
                                 className={"h-10 rounded-full cursor-pointer"}
                                 src={session.user.image} alt={""}/>
